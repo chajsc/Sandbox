@@ -6,7 +6,7 @@ http.createServer(function (request, response) {
   // HTTP Status: 200 : OK
   // Content Type: text/plain
   response.writeHead(200, {'Content-Type': 'text/plain'});
-  var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  var ip = request.headers['x-forwarded-for'] || request.connection.remoteAddress;
   var greetings = "Hello " + ip;
   // Send the response body as "Hello World"
   response.end(greetings);
