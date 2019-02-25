@@ -6,9 +6,9 @@ http.createServer(function (request, response) {
   // HTTP Status: 200 : OK
   // Content Type: text/plain
   response.writeHead(200, {'Content-Type': 'text/plain'});
-  
+  var greetings = "Hello " + request.connection.remoteAddress;
   // Send the response body as "Hello World"
-  response.end('Hello World\n');
+  response.end(greetings);
 }).listen(8080, ip);
 
 // Console will print the message
